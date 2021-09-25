@@ -109,11 +109,13 @@ const post = GetPostFromRsp(await Fetch(`/p/${postID}.html`))
 
 ## 🗒 心愿单 && BUG单
 
-1. 匿名评论(无二级域名,方案不安全)
-2. 音乐播放插件
-   ...
+- markdown 更多的样式支持
+- dark 模式
+- 评论 && 匿名评论
+- 代码样式
+- 看板娘
 
-[提交心愿单 && BUG单](https://github.com/mosszzom/cnblogs-theme-hacker/issues)
+[提交心愿单 && BUG单](https://github.com/mosszzom/cnblogs-theme-hacker/issues/new)
 
 ## 🙏 感谢
 
