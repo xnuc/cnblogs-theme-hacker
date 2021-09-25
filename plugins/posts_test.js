@@ -170,3 +170,28 @@ export async function Test_GetCategoriesAndTags() {
     }
     console.assert(JSON.stringify(expect) === JSON.stringify(cateAndTag), {expect, cateAndTag})
 }
+
+// @case 给rsp 获取文章的描述
+export async function Test_GetPostFromRsp_4() {
+    const rsp = `   <head>
+                    <meta name="description" content="desc">
+                    <title></title>
+                    </head>
+                    <a id="cb_post_title_url" class="postTitle2 vertical-middle" href="https://www.cnblogs.com/ashdyed/p/cnblogs-theme.html">
+                    <span>title</span> </a>
+                    <div id="cnblogs_post_body" class="blogpost-body cnblogs-markdown">content</div><div class="clear">
+                    </div> <span id="post-date">2021-04-02 13:45</span>
+                    <a href="https://i.cnblogs.com/EditPosts.aspx?postid=13144773" rel="nofollow">编辑</a>
+                    <div></div>`
+    const post = GetPostFromRsp(rsp)
+    const expect = {
+        desc: `desc`,
+        content: `content`,
+        date: 1617342300000,
+        url: `https://www.cnblogs.com/ashdyed/p/cnblogs-theme.html`,
+        postID: "13144773",
+        title: "title",
+        edit: "https://i.cnblogs.com/EditPosts.aspx?postid=13144773"
+    }
+    console.assert(JSON.stringify(expect) === JSON.stringify(post), {expect, post})
+}

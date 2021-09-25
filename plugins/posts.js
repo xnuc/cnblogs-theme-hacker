@@ -26,6 +26,7 @@ export function GetPostFromRsp(rsp) {
         ?? rsp.match(/\s<div id="cnblogs_post_body" class="blogpost-body cnblogs-markdown">([\s\S]*?)<br class="more">\s/)
         ?? rsp.match(/\s<div id="cnblogs_post_description" style="display: none">([\s\S]*?)<\/div>\s/)
         ?? rsp.match(/name="description" content="([\s\S]*?)" \/>\s/)
+        ?? rsp.match(/name="description" content="([\s\S]*?)">\s/)
     const desc = match[1]
     const content = rsp.match(/\s<div id="cnblogs_post_body" class="blogpost-body cnblogs-markdown">([\s\S]*?)<\/div>\s*<div class="clear">/)[1]
     const url = rsp.match(/\s<a id="cb_post_title_url" class="postTitle2 vertical-middle" href="([\s\S]*?)">\s/)[1]
