@@ -8,6 +8,7 @@ import {
     Test_PostsURLFromRsp
 } from "./plugins/posts_test"
 import {Test_GetPager, Test_GetPager_1} from "./plugins/pager_test"
+import {Test_GetCommentFromRsp} from "./plugins/comment_test"
 
 (async _ => {
     await Test_Fetch()
@@ -24,4 +25,5 @@ import {Test_GetPager, Test_GetPager_1} from "./plugins/pager_test"
     await Test_GetCategoriesAndTags()
     await Test_GetPager()
     await Test_GetPager_1()
+    await Test_GetCommentFromRsp()
 })()
